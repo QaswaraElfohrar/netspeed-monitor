@@ -1,0 +1,32 @@
+<Window x:Class="NetSpeedMonitor.App.Views.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:NetSpeedMonitor.App.Services"
+        xmlns:loc="clr-namespace:NetSpeedMonitor.Core.Localization;assembly=NetSpeedMonitor.Core"
+        Title="{l:T menu.about}" Width="460" SizeToContent="Height" ResizeMode="NoResize"
+        Icon="pack://application:,,,/Assets/app.ico"
+        Style="{StaticResource AppWindow}" WindowStartupLocation="CenterScreen"
+        FlowDirection="{Binding IsRtl, Source={x:Static loc:Loc.Instance}, Converter={StaticResource Rtl}}">
+    <StackPanel Margin="28,24,28,22" HorizontalAlignment="Stretch">
+        <Image Source="pack://application:,,,/Assets/lion-orange.png" Width="120" Height="104" HorizontalAlignment="Center"
+               RenderOptions.BitmapScalingMode="HighQuality"/>
+        <TextBlock Text="{l:T app.name}" FontSize="22" FontWeight="Bold" Foreground="#FF9800"
+                   HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,12,0,2"/>
+        <TextBlock x:Name="VersionText" Style="{StaticResource Subtle}" HorizontalAlignment="Center" Margin="0,0,0,14"/>
+        <Border Style="{StaticResource Card}" Padding="14,12">
+            <StackPanel>
+                <TextBlock Text="{l:T about.company}" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap"
+                           TextAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="{l:T about.edition}" Foreground="#FF9800" FontWeight="SemiBold" FontSize="14"
+                           HorizontalAlignment="Center" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Border>
+        <TextBlock Text="{l:T about.text}" Style="{StaticResource Subtle}" TextWrapping="Wrap" TextAlignment="Center"
+                   Margin="0,14,0,16"/>
+        <Button Content="{l:T about.website}" Click="OnWebsite" Margin="0,0,0,8" HorizontalAlignment="Stretch"
+                Background="#FF9800" Foreground="White" BorderBrush="#E65100"/>
+        <Button Content="{l:T about.facebook}" Click="OnFacebook" Margin="0,0,0,8" HorizontalAlignment="Stretch"
+                Background="#1877F2" Foreground="White" BorderBrush="#1255B5"/>
+        <Button Content="{l:T btn.close}" Click="OnClose" HorizontalAlignment="Stretch" IsCancel="True"/>
+    </StackPanel>
+</Window>

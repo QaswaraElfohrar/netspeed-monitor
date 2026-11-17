@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>NetSpeedMonitor.App</RootNamespace>
+    <AssemblyName>NetSpeedMonitor</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Product>NetSpeed Monitor</Product>
+    <Company>Qaswara Elfohrar Programming for Information Technology</Company>
+    <Copyright>© 2026 Qaswara Elfohrar Programming for Information Technology</Copyright>
+    <Description>Real-time network speed monitor for the Windows taskbar</Description>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CA1416;WFAC010</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- WinForms is only used for NotifyIcon/ColorDialog; keep its types out of the global namespace -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <Resource Include="Assets\lion-orange.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetSpeedMonitor.Core\NetSpeedMonitor.Core.csproj" />
+  </ItemGroup>
+
+</Project>

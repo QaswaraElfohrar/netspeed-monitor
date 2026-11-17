@@ -1,0 +1,18 @@
+<Application x:Class="NetSpeedMonitor.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="clr-namespace:NetSpeedMonitor.App.Services"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- index 0 is swapped at runtime by ThemeService -->
+                <ResourceDictionary Source="Themes/Dark.xaml"/>
+                <ResourceDictionary Source="Themes/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <l:RtlConverter x:Key="Rtl"/>
+            <l:BoolToVisibilityConverter x:Key="BoolVis"/>
+            <l:InverseBoolConverter x:Key="InvBool"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
